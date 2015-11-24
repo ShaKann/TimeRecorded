@@ -4,22 +4,20 @@ import {WebSite} from '../item/website';
 
 @Injectable()
 export class WebSiteService {
-  private http: Http;
   public sites: WebSite[];
-  public loading : boolean; 
+  public loading: boolean;
 
 
-  constructor(http: Http) {
-    this.http = http;
+  constructor(private http: Http) {
     this.sites = [];
     this.load();
   }
 
-  public load() {
+  public load = () => {
     this.loading = true;
     this.http.get("http://localhost:9000/sites")
-      .map((res:any) => res.json())
-      .subscribe((results:any) => {
+      .map((res: any) => res.json())
+      .subscribe((results: any) => {
         this.sites.length = 0;
         for (var i = 0; i < results.length; i++) {
           var s = results[i];
