@@ -1,0 +1,38 @@
+<ion-navbar *navbar>
+  <a menu-toggle>
+    <icon menu></icon>
+  </a>
+  <ion-title>IIS pages list</ion-title>
+  <ion-nav-items primary>
+    <button (click)="refresh()">
+      <icon refresh></icon>
+    </button>
+  </ion-nav-items>
+  <a ion-nav-items>
+    <primary>ssss</primary>
+  </a>
+</ion-navbar>
+
+<ion-content *ng-if="!isLoading()">
+  <ion-list>
+    <ion-item *ng-for="#item of items" (click)="itemTapped($event, item)">
+      <icon name="{{item.icon}}" item-left is-active={{item.alive}}></icon>
+      {{item.name}}
+      <div class="item-note" item-right style="min-width: 50%">
+        <div *ng-for="#address of item.siteAddresses">
+          <a href="{{address}}" target="_blank">{{address}}</a>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div *ng-if="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
+<ion-content *ng-if="isLoading()">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</ion-content>

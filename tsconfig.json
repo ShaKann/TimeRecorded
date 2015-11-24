@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "isolatedModules": true,
+    "noEmitOnError": false,
+    "rootDir": "."
+  },
+  "filesGlob": [
+    "www/**/*{.ts, .d.ts}"
+  ],
+  "files": [
+    "www/app/app.ts",
+    "www/app/bill/bill.ts",
+    "www/app/bill/billService.ts",
+    "www/app/hello-ionic/hello-ionic.ts",
+    "www/app/item-details/item-details.ts",
+    "www/app/item/website.ts",
+    "www/app/item/websiteService.ts",
+    "www/app/list/list.ts",
+    "www/app/task/task.ts",
+    "www/app/task/taskService.ts"
+  ]
+}

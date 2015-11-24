@@ -1,0 +1,80 @@
+// To customize the look and feel of Ionic, you can override
+// the Sass variables found in Ionic's source scss files.
+
+
+// App Color Variables
+// ---------------------------------
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+
+primary:    #387ef5,
+secondary:  #32db64,
+danger:     #f53d3d,
+light:      #f4f4f4,
+dark:       #222,
+
+);
+
+
+
+// Ionic Sass
+// ---------------------------------
+@import "ionic";
+
+
+
+// Import your Sass files here
+// ---------------------------------
+@import "item-details/item-details",
+//"list/list",
+"hello-ionic/hello-ionic";
+
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+.item-header{
+  min-width: 125px;
+}

@@ -1,0 +1,45 @@
+<ion-navbar *navbar>
+  <a menu-toggle *ng-if="!selectedItem">
+    <icon menu></icon>
+  </a>
+  <ion-title>Website details</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list *ng-if="selectedItem" class="selection">
+    <ion-item>
+      <div item-left class="item-header">Name:</div>
+      <div>
+        <b>{{selectedItem.name}}</b>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div item-left class="item-header">Id:</div>
+      <div>
+        <b>{{selectedItem.id}}</b>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div item-left class="item-header">State:</div>
+      <div>
+        <b>{{selectedItem.state}}</b>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div item-left class="item-header">Bindings:</div>
+      <div>
+        <div *ng-for="#binding of selectedItem.bindings">
+          {{binding}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div item-left class="item-header">Addresses:</div>
+      <div>
+        <div *ng-for="#address of selectedItem.siteAddresses">
+          <a href="{{address}}" target="_blank">{{address}}</a>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
